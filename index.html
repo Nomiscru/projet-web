@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <script defer src="script.js"></script>
+</head>
+
+<header>
+    <template id="headerTemplate"><!--template du header-->
+        <img src="./ressources-projet-web/logo.png">
+        <h1>
+            Promo EDWM2609
+        </h1>
+        <div><!--boutons menu-->
+            <button type="button" id="btnHome" href="">Accueil</button>
+            <button type="button" id="btnPref" href="">Préférences</button>
+            <button type="button" id="btnMap" href="">Carte</button>
+            <button type="button" id="btnInfo" href="">Informations</button>
+        </div>
+    </template>
+    <div id="header"></div>
+</header>
+
+<body>
+    <fieldset><!--choix type affichage-->
+        <form id="affichage">
+            <legend>Type d'affichage</legend>
+            <input type="radio" name="affichage" id="liste" value="liste" checked>
+            <label for="liste">Liste</label>
+            <input type="radio" name="affichage" id="cartes" value="cartes">
+            <label for="cartes">Cartes</label>
+        </form>
+    </fieldset>
+    <h2><!--titre tableau/liste apprenants-->
+        Liste des Apprenants
+    </h2>
+    <table><!--tableau/liste apprenants-->
+        <thead>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Ville</th>
+            <th> </th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+            </tr>
+            <tr>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+            </tr>
+            <tr>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+            </tr>
+            <tr>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+            </tr>
+            <tr>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+            </tr>
+            <tr>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+                <td>Lorem.</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
