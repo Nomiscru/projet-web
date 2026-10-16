@@ -1,0 +1,145 @@
+/*#134A7F couleur logo*/
+
+*{font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+margin: 0;
+padding: 0;
+}
+
+/*------------------------*/
+/*-----*--TEMPLATE--*-----*/
+/*------------------------*/
+header {display: flex; justify-content: space-between; align-items: center;
+    background-color: #2f6faa; padding: 1em} 
+#logo { display: block; height: max-content; width: max-content; margin-right: 1vw;}
+h1 {color: aliceblue;}
+#menu {display: flex; flex-wrap: wrap; justify-content: end;}
+.btnTop {background-color: #466b8d; 
+    color:aliceblue; font-size:medium; font-weight: bold; letter-spacing: 0.1em;
+    border: 0.2em solid #134A7F; border-radius: 10%;  
+    width: 9em; height: 3em;
+    margin-left: 0.5vw; margin-right: 0.5vw; margin-bottom: 1vw;
+    
+}
+.btnTop:hover {box-shadow: 0.2em 0.2em  #134A7F;}
+.btnTop:active { background-color: #134A7F}
+
+/*------------------------*/
+/*---*-THEME CLASSIQUE-*--*/
+/*------------------------*/
+/*---INDEX---*/
+/*choix affichge*/
+#affichageHome{display:flex; justify-self: end; align-items: center; 
+    margin: 1em; margin-right: 10vw;}
+#affichageHome > legend {font-size: large; font-weight: bold; text-decoration: underline; margin: 1vw;}
+#affichageHome > legend > input {margin: 1vw;}
+#liste {margin-right:  1vw; margin-left: 1vw;}
+#cartes {margin-right: 1vw; margin-left: 1vw;} 
+
+/*titre tableau/cadres*/
+h2 {margin-top: 3em; margin-left: 2vw; text-decoration: underline}
+
+/*tableau*/
+fieldset{border: none;}
+#affTab {margin: 2.9em;}
+#tab {width: 45vw; border: 0.2em solid #134A7F;border-collapse:collapse}
+thead {height: 2em; background-color: #66829c;}
+th {border-right: 0.2em #134A7F solid;}
+td {border-right: 0.2em #134A7F solid;padding: 0.25em; padding-left: 0.5em;}
+tr {font-size: large;}
+
+.nom {width: 10em; font-weight: bold;}
+.prenom {width: 10em;}
+.ville {width: 12em;}
+
+/*cartes*/
+#affCadre {margin: 2.9em;}
+#cadreGeneral {display: flex; justify-self: center ; flex-wrap: wrap; justify-content: center; 
+    width: 70vw;}
+.cadre {display: flex; flex-direction: column; align-items: center;
+    width: 20em; height: 10em; 
+    border: 0.2em solid #134A7F; border-radius: 10%;
+    margin: 1em;}
+.nomPrenom {font-weight: bold; margin-top: 1em;}
+.villeCadre {margin-top: 1em;}
+
+.btnDetail {background-color:aliceblue ; 
+    color:#134A7F; font-size:medium; font-weight: bold; letter-spacing: 0.1em;
+    border: 0.2em solid #134A7F; border-radius: 10%;  
+    width: 7em; height: 2em;
+    margin-top: 2em;}
+.btnDetail:hover {box-shadow: 0.2em 0.2em  #134A7F;}
+.btnDetail:active { background-color: #134A7F}    
+
+/*---INFORMATION---*/
+#info {display: flex; flex-direction: column; align-items:  center;}
+#dateFormation {margin-top: 2em;}
+#nbEtudiant {margin-top: 1em;}
+
+#cases {display: flex; justify-content: space-evenly;
+margin-top: 5em; margin-bottom: 5em;}
+#description {width: 30vw; min-height: 10em; height: auto; 
+    border : 0.2em #134A7F solid; border-radius: 5%;
+padding: 1em; margin-top: 1em;}
+#liens {width: 30vw; height: 10em; 
+    border : 0.2em #134A7F solid; border-radius: 5%;
+padding: 1em; margin-top: 1em;}
+ul {list-style: none;}
+
+.btnHome {display:flex; justify-self: center; justify-content: center; align-items: center;
+    background-color: #466b8d; 
+    color:aliceblue; font-size:medium; font-weight: bold; letter-spacing: 0.1em;
+    border: 0.2em solid #134A7F; border-radius: 5%;  
+    margin-bottom: 5em; width: 18vw; height: auto; min-height: 3em;}
+.btnHome:hover {box-shadow: 0.2em 0.2em  #134A7F;}
+.btnHome:active { background-color: #134A7F}    
+
+
+/*---PREFERENCES---*/
+#preferences {display: flex; justify-self: center; flex-direction: column; align-content: center;
+    width: 50%; height: 20em; margin-top: 5em;}
+
+#themeForm {display: flex; flex-wrap: wrap; width: 100%;}
+#themeForm>legend {font-weight: bold;width: 50%;}
+#theme{font-weight: bold; margin-left: 19vw;}
+
+#affichageForm {display: flex; flex-wrap: wrap; 
+    width: 100%;margin-top: 5em;}
+#affichageForm>legend {font-weight: bold;
+    width: 50%}
+#input {display: flex; flex-direction: column; 
+margin-left: 19vw;}
+#input>label>label {font-weight: bold;}
+
+
+#bouton {display: flex; justify-content: space-evenly; margin-bottom: 5em;}
+#btnSave {display:flex; justify-self: center; justify-content: center; align-items: center;
+    background-color: #468d5b; 
+    color:aliceblue; font-size:medium; font-weight: bold; letter-spacing: 0.1em;
+    border: 0.2em solid #134A7F; border-radius: 5%;  
+    margin-bottom: 5em; width: 18vw; height: auto; min-height: 3em;}
+#btnSave:hover {box-shadow: 0.2em 0.2em  #134A7F;}
+#btnSave:active { background-color: #134A7F}     
+
+/*---CARTE---*/
+#map {display: flex; justify-self: center;
+    margin-top: 2.9em;margin-bottom: 5em; width: 60%; height: 50em; }
+
+.btnHome {display:flex; justify-self: center; justify-content: center; align-items: center;
+    background-color: #466b8d; 
+    color:aliceblue; font-size:medium; font-weight: bold; letter-spacing: 0.1em;
+    border: 0.2em solid #134A7F; border-radius: 5%;  
+    margin-bottom: 5em; width: 18vw; height: auto; min-height: 3em;}
+.btnHome:hover {box-shadow: 0.2em 0.2em  #134A7F;}
+.btnHome:active { background-color: #134A7F}      
+
+
+/*------------------------*/
+/*---*--THEME SOMBRE--*---*/
+/*------------------------*/
+body.sombre { background-color: #222;
+    color: white;}
+body.sombre a {color: #86accf;}
+
+body.sombre #tab {border: 0.2em solid aliceblue;}
+body.sombre th {border-right: 0.2em aliceblue solid;}
+body.sombre td {border-right: 0.2em aliceblue solid;}

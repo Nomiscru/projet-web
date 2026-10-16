@@ -5,28 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Accueil</title>
+    <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
 
-<header>
-    <template id="headerTemplate"><!--template du header-->
-        <img src="./ressources-projet-web/logo.png">
+
+<template id="headerTemplate"><!--template du header-->
+    <header>
+        <img id="logo" src="./ressources-projet-web/logo.png">
         <h1>
             Promo EDWM2609
         </h1>
-        <div><!--boutons menu-->
-            <button type="button" id="btnHome" href="">Accueil</button>
-            <button type="button" id="btnPref" href="">Préférences</button>
-            <button type="button" id="btnMap" href="">Carte</button>
-            <button type="button" id="btnInfo" href="">Informations</button>
+        <div id="menu"><!--boutons menu-->
+            <button type="button" class="btnTop" onclick="window.location.href='index.html'">Accueil</button>
+            <button type="button" class="btnTop" onclick="window.location.href='preferences.html'">Préférences</button>
+            <button type="button" class="btnTop" onclick="window.location.href='map.html'">Carte</button>
+            <button type="button" class="btnTop" onclick="window.location.href='informations.html'">Informations</button>
         </div>
-    </template>
-    <div id="header"></div>
-</header>
+    </header>
+</template>
+<div id="header"></div>
+
 
 <body>
-    <fieldset><!--choix type affichage-->
-        <form id="affichage">
+
+    <fieldset id="fieldHome"><!--choix type affichage-->
+        <form id="affichageHome">
             <legend>Type d'affichage</legend>
             <input type="radio" name="affichage" id="liste" value="liste" checked>
             <label for="liste">Liste</label>
@@ -37,52 +41,88 @@
     <h2><!--titre tableau/liste apprenants-->
         Liste des Apprenants
     </h2>
-    <table><!--tableau/liste apprenants-->
-        <thead>
-            <th>Nom</th>
-            <th>Prénom</th>
-            <th>Ville</th>
-            <th> </th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Lorem.</td>
-                <td>Lorem.</td>
-                <td>Lorem.</td>
-                <td>Lorem.</td>
-            </tr>
-            <tr>
-                <td>Lorem.</td>
-                <td>Lorem.</td>
-                <td>Lorem.</td>
-                <td>Lorem.</td>
-            </tr>
-            <tr>
-                <td>Lorem.</td>
-                <td>Lorem.</td>
-                <td>Lorem.</td>
-                <td>Lorem.</td>
-            </tr>
-            <tr>
-                <td>Lorem.</td>
-                <td>Lorem.</td>
-                <td>Lorem.</td>
-                <td>Lorem.</td>
-            </tr>
-            <tr>
-                <td>Lorem.</td>
-                <td>Lorem.</td>
-                <td>Lorem.</td>
-                <td>Lorem.</td>
-            </tr>
-            <tr>
-                <td>Lorem.</td>
-                <td>Lorem.</td>
-                <td>Lorem.</td>
-                <td>Lorem.</td>
-            </tr>
-        </tbody>
-    </table>
+    <div id="affTab">
+        <table id="tab"><!--tableau/liste apprenants-->
+            <thead>
+                <th>Nom</th>
+                <th>Prénom</th>
+                <th>Ville</th>
+                <th> </th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="nom">Lorem.</td>
+                    <td class="prenom">Lorem.</td>
+                    <td class="ville">Lorem.</td>
+                    <td>Lorem.</td>
+                </tr>
+                <tr>
+                    <td class="nom">Lorem.</td>
+                    <td class="prenom">Lorem.</td>
+                    <td class="ville">Lorem.</td>
+                    <td>Lorem.</td>
+                </tr>
+                <tr>
+                    <td class="nom">Lorem.</td>
+                    <td class="prenom">Lorem.</td>
+                    <td class="ville">Lorem.</td>
+                    <td>Lorem.</td>
+                </tr>
+                <tr>
+                    <td class="nom">Lorem.</td>
+                    <td class="prenom">Lorem.</td>
+                    <td class="ville">Lorem.</td>
+                    <td>Lorem.</td>
+                </tr>
+                <tr>
+                    <td class="nom">Lorem.</td>
+                    <td class="prenom">Lorem.</td>
+                    <td class="ville">Lorem.</td>
+                    <td>Lorem.</td>
+                </tr>
+                <tr>
+                    <td class="nom">Lorem.</td>
+                    <td class="prenom">Lorem.</td>
+                    <td class="ville">Lorem.</td>
+                    <td>Lorem.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="affCadre">
+        <div id="cadreGeneral">
+        <div class="cadre">
+            <p class="nomPrenom">Lorem, ipsum.</p>
+            <p class="villeCadre">Lorem.</p>
+            <button type="button" class="btnDetail" href="">Lorem.</button>
+        </div>
+        <div class="cadre">
+            <p class="nomPrenom">Lorem, ipsum.</p>
+            <p class="villeCadre">Lorem.</p>
+            <button type="button" class="btnDetail" href="">Lorem.</button>
+        </div>
+        <div class="cadre">
+            <p class="nomPrenom">Lorem, ipsum.</p>
+            <p class="villeCadre">Lorem.</p>
+            <button type="button" class="btnDetail" href="">Lorem.</button>
+        </div>
+        <div class="cadre">
+            <p class="nomPrenom">Lorem, ipsum.</p>
+            <p class="villeCadre">Lorem.</p>
+            <button type="button" class="btnDetail" href="">Lorem.</button>
+        </div>
+        <div class="cadre">
+            <p class="nomPrenom">Lorem, ipsum.</p>
+            <p class="villeCadre">Lorem.</p>
+            <button type="button" class="btnDetail" href="">Lorem.</button>
+        </div>
+        <div class="cadre">
+            <p class="nomPrenom">Lorem, ipsum.</p>
+            <p class="villeCadre">Lorem.</p>
+            <button type="button" class="btnDetail" href="">Lorem.</button>
+        </div>
+        </div>
+    </div>
 </body>
 
 </html>

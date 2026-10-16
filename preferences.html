@@ -5,35 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Péférences</title>
+    <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
 
-<header><!--load du template "header"-->
-    <div id="header"></div>
-</header>
+    <div id="header"></div><!--load du template "header"-->
 
 <body>
-    <h2><!--tittre-->
-        Préférences du site
-    </h2>
-    <fieldset><!--zone des formulaires-->
+    <h2>Préférences du site
+    </h2><!--tittre-->
+    <fieldset id="preferences"><!--zone des formulaires-->
         <form id="themeForm"><!--zone 1° form thème-->
             <legend>Thème du site</legend>
             <select name="theme" id="theme">
-                <option name="clair" id="clair" value="clair" selected>Clair</option>
-                <option name="sombre" id="sombre" value="sombre">Sombre</option>
+                <option name="clairForm" id="clairForm" value="clairForm" selected>Clair</option>
+                <option name="sombreForm" id="sombreForm" value="sombreForm">Sombre</option>
             </select>
         </form>
         <form id="affichageForm"><!--zone 2° form type affichege-->
             <legend>Format d'affichage de la liste des aprenants</legend>
-            <input type="radio" name="affichage" id="liste" value="liste" checked>
-            <label for="liste">Liste</label>
-            <input type="radio" name="affichage" id="cartes" value="cartes">
-            <label for="cartes">Cartes</label>
+            <div id="input">
+            <label>    
+                <input type="radio" name="affichageForm" id="listeForm" value="listeForm" checked>
+                <label for="listeForm">Liste</label>
+            </label>
+            <label>
+                <input type="radio" name="affichageForm" id="cartesForm" value="cartesForm">
+                <label for="cartesForm">Cartes</label>
+            </label>
+            </div>
         </form>
     </fieldset>
-    <div><!--boutons retour et save-->
-        <button type="button" id="btnHome" href="">Retour à la page d'accueil</button>
+    <div id="bouton"><!--boutons retour et save-->
+        <button type="button" class="btnHome" onclick="window.location.href='index.html'">Retour à la page d'accueil</button>
         <button type="submit" id="btnSave" href="">Enregistrer</button>
     </div>
 </body>

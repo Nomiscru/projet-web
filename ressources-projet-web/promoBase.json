@@ -1,0 +1,76 @@
+{
+  "apprenants" : [
+    {
+      "id" : 1,
+      "nom" : "LE CORRE",
+      "prenom" : "Simon",
+      "ville" : "La Rochelle",
+      "avatar" : "./ressources-projet-wrb/avatar.png",
+      "anecdotes" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste quae voluptatum ipsum incidunt aperiam neque in minus, placeat necessitatibus quam?",
+      "coordonnees": {
+        "latitude" : "446.16069836402547",
+        "longitude" : "-1.1511666581506799"
+      }
+    },
+    {
+      "id" : 2,
+      "nom" : "GUILLET",
+      "prenom" : "Alizée",
+      "ville": "",
+      "avatar" : "./ressources-projet-wrb/avatar.png",
+      "anecdotes" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste quae voluptatum ipsum incidunt aperiam neque in minus, placeat necessitatibus quam?",
+      "coordonnees": {
+        "latitude" : "47.2258527",
+        "longitude" : "-1.6178441"
+      }
+    },
+    {
+      "id" : 3,
+      "nom" : "PIARDET",
+      "prenom" : "Gauthier",
+      "ville" : "Royan",
+      "avatar" : "./ressources-projet-wrb/avatar.png",
+      "anecdotes" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste quae voluptatum ipsum incidunt aperiam neque in minus, placeat necessitatibus quam?",
+      "coordonnees": {
+        "latitude" : "45.62318604068806",
+        "longitude" : "-1.0431354618902255"
+      }
+    },
+    {
+      "id" : 4,
+      "nom" : "PIOLI",
+      "prenom" : "Hélène",
+      "ville": "Parthenay",
+      "avatar" : "./ressources-projet-wrb/avatar.png",
+      "anecdotes" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste quae voluptatum ipsum incidunt aperiam neque in minus, placeat necessitatibus quam?",
+      "coordonnees": {
+        "latitude" : "46.64896535100442",
+        "longitude" : "-0.2522388906471422"
+      }
+    },
+    {
+      "id" : 5,
+      "nom" : "MARTIN ROY",
+      "prenom" : "Raphaël",
+      "ville" : "Saint-Saturnin-du-Bois",
+      "avatar" : "./ressources-projet-wrb/avatar.png",
+      "anecdotes" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste quae voluptatum ipsum incidunt aperiam neque in minus, placeat necessitatibus quam?",
+      "coordonnees": {
+        "latitude" : "46.13654461235199",
+        "longitude" : "-0.6712347906870217"
+      }
+    },
+    {
+      "id" : 6,
+      "nom" : "HOBLOS",
+      "prenom" : "Ritta",
+      "ville": "Etampes",
+      "avatar" : "./ressources-projet-wrb/avatar.png",
+      "anecdotes" : "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iste quae voluptatum ipsum incidunt aperiam neque in minus, placeat necessitatibus quam?",
+      "coordonnees": {
+        "latitude" : "48.434449764687656",
+        "longitude" : "2.161661424840158"
+      }
+    }
+  ]
+}

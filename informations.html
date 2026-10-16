@@ -4,35 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Informations</title>
+    <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
 </head>
 
-<header><!--load du template "header"-->
-    <div id="header"></div>
-</header>
+<div id="header"></div><!--load du template "header"-->
 
 <body>
-    <div><!--titres et infos formation-->
-        <h2>*INFORMATIONS GENERALES*</h2>
+    <div id="info"><!--titres et infos formation-->    
+        <h2>* INFORMATIONS GENERALES *</h2>
         <p id="dateFormation">Formation du <strong>15/09/2026</strong> au <strong>30/04/2026</strong></p>
-        <p id="nbEtudiant">Nombre d'apprenants : 6</p>
+        <p id="nbEtudiant">Nombre d'apprenants : 6</p>  
     </div>
-    <div>
-        <div id="description"><!--block description-->
-            <h3>Description</h3>
-            <p>Lorem ipsum dolor sit amet consectetur.</p>
+    <div id="cases">
+        <div> 
+        <h3>Description</h3>
+        <div id="description"><!--block description-->           
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error, repudiandae. 
+                Totam repellat, eligendi laudantium laboriosam in dolorem rem sint obcaecati 
+                voluptatem placeat natus? Similique fugiat ratione unde autem nihil nulla.
+                Omnis, libero. Distinctio necessitatibus, odit veritatis quos architecto vitae 
+                quae eligendi esse, a eaque sequi dicta at mollitia fuga ullam. Expedita earum
+                 consectetur porro aliquid voluptatibus cumque quia placeat rerum?
+            </p>
         </div>
-        <div id="liens"><!--block liens utiles-->
-            <h3>Liens Utiles</h3>
-            <li>
-                <ul><a href="https://developer.mozilla.org/fr/">MDN WEB Docs</a></ul>
-                <ul><a href="https://github.com/?locale=fr-fr/">GitHub</a></ul>
-                <ul><a href="https://academy.campus-eni.fr/">Ecole ENI</a></ul>
-                <ul><a href="https://killercoda.com/">Killercoda</a></ul>
-            </li>
+        </div>
+        <div> 
+        <h3>Liens Utiles</h3>
+        <div id="liens"><!--block liens utiles-->            
+            <ul>
+                <li><a href="https://developer.mozilla.org/fr/">MDN WEB Docs</a></li>
+                <li><a href="https://github.com/?locale=fr-fr/">GitHub</a></li>
+                <li><a href="https://academy.campus-eni.fr/">Ecole ENI</a></li>
+                <li><a href="https://killercoda.com/">Killercoda</a></li>
+            </ul>
+        </div>
         </div>
     </div>
-    <button type="button" id="btnHome" href=""0>Retour à la page d'accueil</button><!--bouton retour-->
+    <button type="button" class="btnHome" onclick="window.location.href='index.html'">Retour à la page d'accueil</button><!--bouton retour-->
 </body>
 
 </html>
