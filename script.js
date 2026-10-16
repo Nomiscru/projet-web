@@ -1,7 +1,7 @@
 
 
 function init() {
- 
+
     //---RECUPERATION ET RENVOIE DU TEMPLATE 'HEADER'---
     fetch("index.html")
         .then(response => response.text())
@@ -14,7 +14,6 @@ function init() {
 
             document.getElementById("header").appendChild(clone);
         });
-
 
 
     //renvoie des choix menu préférences
@@ -61,18 +60,15 @@ function init() {
 
     const affichageHome = document.getElementById("affichageHome")
     if (affichageHome) {
-    display()
+        display()
     }
 
     themeSite()
 
+
+
 }
 
-                     
-
-window.onload = init
-
-                     
 
 //---GESTION DES PREFERENCES---    
 //sauvegarde des préférences
@@ -82,19 +78,18 @@ if (btnSave) {//verif si btnSave existe
     save.addEventListener("click", () => {    //ecoute du bouton action lors d'un click
         var theme = document.getElementById("theme");
         localStorage.setItem("theme", theme.value)//save le theme
-        themeSite () //charge theme choisi
+        themeSite() //charge theme choisi
         var affichageForm = document.querySelector('input[name="affichageForm"]:checked')//selection de la radio coché
         localStorage.setItem("affichageForm", affichageForm.value)//save l'affichege
     })
 }
 
 //chargement du theme
-
-function themeSite () {
+function themeSite() {
     const themeChoix = localStorage.getItem("theme");
     if (themeChoix === "sombreForm") {
         document.body.classList.add("sombre");
-        } else {
+    } else {
         document.body.classList.remove("sombre");
     }
 }
@@ -124,7 +119,6 @@ function display() {
 }
 
 
-
 //---EXPLOITATION DE PROMO.JSON---
 //Création tableau
 let tabNom = []
@@ -136,7 +130,7 @@ function envoieNom(tabNom) {//décaration de la fonction
     let nameEtu = document.querySelectorAll(".nom")//recup de tout les sélécteur ayant la classe 'nom'
     let i = 0
     for (element of tabNom) {   //pour chaque élément du tableau 'tabNom'
-        nameEtu[i].innerText = tabNom[i]//injection du texte présent dans l'indice du tableau vers le sélecteur précisé
+        nameEtu[1 + i].innerText = tabNom[i]//injection du texte présent dans l'indice du tableau vers le sélecteur précisé
         i++
     }
 }
@@ -144,7 +138,7 @@ function envoiePrenom(tabPrenom) {
     let fristNameEtu = document.querySelectorAll(".prenom")
     let i = 0
     for (element of tabPrenom) {
-        fristNameEtu[i].innerText = tabPrenom[i]
+        fristNameEtu[1 + i].innerText = tabPrenom[i]
         i++
     }
 }
@@ -152,14 +146,15 @@ function envoieVille(tabVille) {
     let cityEtu = document.querySelectorAll(".ville")
     let i = 0
     for (element of tabVille) {
-        cityEtu[i].innerText = tabVille[i]
+        cityEtu[1 + i].innerText = tabVille[i]
         i++
     }
 }
 
 //Remplissage tableau
+const modaleLink = document.getElementById("detailMod");
 const affTab = document.getElementById("affTab")
-if (affTab) {
+if (affTab || modaleLink) {
     fetch("promo.json")
         .then(response => response.json())//Analyse du JSON en entrée pour produire un objet JavaScript.
         .then(data => {
@@ -169,10 +164,11 @@ if (affTab) {
             envoieNom(tabNom)//appel de la fontion 
             envoiePrenom(tabPrenom)
             envoieVille(tabVille)
+            envoieModuleListe(tabNom, tabPrenom, tabVille)
+            envoieModuleCarte(tabNom, tabPrenom, tabVille)
         })
 
 }
-
 
 //Envoie des donnnées cartes
 function envoieNomPrenomCadre(cadNom, cadPrenom) {//décaration de la fonction
@@ -210,79 +206,147 @@ if (affCadre) {
 
 //---MAP---
 //Récup des coordonnées
-async function load () {
+async function load() {
     const response = await fetch("promo.json")
     const data = await response.json()//Analyse du JSON en entrée pour produire un objet JavaScript.
-      
+
     const lat = data.apprenants.map(promo => promo.coordonnees.latitude)//Une Promise qui se résout en un objet JavaScript. Cet objet peut être tout ce qui peut être représenté par du JSON — un objet, un tableau, une chaîne de caractères, un nombre…
     const long = data.apprenants.map(promo => promo.coordonnees.longitude)
-    let coordon = []  
+    let coordon = []
     let i = 0
     for (element of lat) {   //pour chaque élément du tableau 'tabNom'
         coordon[i] = lat[i] + "," + long[i]//injection du texte présent dans l'indice du tableau vers le sélecteur précisé
         i++
     }
- 
 
     const carteNom = data.apprenants.map(promo => promo.nom)//Une Promise qui se résout en un objet JavaScript. Cet objet peut être tout ce qui peut être représenté par du JSON — un objet, un tableau, une chaîne de caractères, un nombre…
     const cartePrenom = data.apprenants.map(promo => promo.prenom)
-    let nomPrenom = []  
+    let nomPrenom = []
     let y = 0
     for (element of carteNom) {   //pour chaque élément du tableau 'tabNom'
         nomPrenom[y] = carteNom[y] + ", " + cartePrenom[y]//injection du texte présent dans l'indice du tableau vers le sélecteur précisé
         y++
     }
 
-    return [coordon, nomPrenom]   
-}  
+    return [coordon, nomPrenom]
+}
 
 
 //Affiichage de la carte
 const mapAff = document.getElementById("map")
 if (mapAff) {
-    load ().then( resultat => {
-    let loadCoord = (resultat[0])
-    let loadName = (resultat[1])
-    var map = L.map('map').setView([48.8566, 2.3522], 13);
+    load().then(resultat => {
+        let loadCoord = (resultat[0])
+        let loadName = (resultat[1])
+        var map = L.map('map').setView([48.8566, 2.3522], 13);
 
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
 
-    L.marker(loadCoord[0].split(",").map(Number)).addTo(map)
-    .bindPopup(loadName[0])
-    .openPopup()
+        L.marker(loadCoord[0].split(",").map(Number)).addTo(map)
+            .bindPopup(loadName[0])
+            .openPopup()
 
-    L.marker(loadCoord[1].split(",").map(Number)).addTo(map)
-    .bindPopup(loadName[1])
-    .openPopup()
+        L.marker(loadCoord[1].split(",").map(Number)).addTo(map)
+            .bindPopup(loadName[1])
+            .openPopup()
 
-    L.marker(loadCoord[2].split(",").map(Number)).addTo(map)
-    .bindPopup(loadName[2])
-    .openPopup()
+        L.marker(loadCoord[2].split(",").map(Number)).addTo(map)
+            .bindPopup(loadName[2])
+            .openPopup()
 
-    L.marker(loadCoord[3].split(",").map(Number)).addTo(map)
-    .bindPopup(loadName[3])
-    .openPopup()
+        L.marker(loadCoord[3].split(",").map(Number)).addTo(map)
+            .bindPopup(loadName[3])
+            .openPopup()
 
-    L.marker(loadCoord[4].split(",").map(Number)).addTo(map)
-    .bindPopup(loadName[4])
-    .openPopup()
-    
-    L.marker(loadCoord[5].split(",").map(Number)).addTo(map)
-    .bindPopup(loadName[5])
-    .openPopup()
-})
+        L.marker(loadCoord[4].split(",").map(Number)).addTo(map)
+            .bindPopup(loadName[4])
+            .openPopup()
+
+        L.marker(loadCoord[5].split(",").map(Number)).addTo(map)
+            .bindPopup(loadName[5])
+            .openPopup()
+    })
 }
 
 
+//---MODALE---
+//Remplissage de la modale
+function choixDetailListe(event, tabNom, tabPrenom, tabVille) { //choix de l'étudaint apres l'action
+    switch (event.target.id) {
+        case "0": remplissage(tabNom, tabPrenom, tabVille, 0); break;
+        case "1": remplissage(tabNom, tabPrenom, tabVille, 1); break;
+        case "2": remplissage(tabNom, tabPrenom, tabVille, 2); break;
+        case "3": remplissage(tabNom, tabPrenom, tabVille, 3); break;
+        case "4": remplissage(tabNom, tabPrenom, tabVille, 4); break;
+        case "5": remplissage(tabNom, tabPrenom, tabVille, 5)
+    }
+}
+
+function choixDetailCadre(event, tabNom, tabPrenom, tabVille) {
+    switch (event.target.id) {
+        case "0": remplissage(tabNom, tabPrenom, tabVille, 0); break;
+        case "1": remplissage(tabNom, tabPrenom, tabVille, 1); break;
+        case "2": remplissage(tabNom, tabPrenom, tabVille, 2); break;
+        case "3": remplissage(tabNom, tabPrenom, tabVille, 3); break;
+        case "4": remplissage(tabNom, tabPrenom, tabVille, 4); break;
+        case "5": remplissage(tabNom, tabPrenom, tabVille, 5)
+    }
+}
+
+function remplissage(cadNom, cadPrenom, cadVille, x) {//récupère et remplit les champs en fonction de l'id
+    var nom = document.querySelector(".nom")
+    nom.innerText = cadNom[x]
+    var prenom = document.querySelector(".prenom")
+    prenom.innerText = cadPrenom[x]
+    var ville = document.querySelector(".ville")
+    ville.innerText = cadVille[x]
+}
 
 
+//Ouverture de la modale link
+function envoieModuleListe(tabNom, tabPrenom, tabVille) {
+    if (modaleLink) {
+        document.querySelectorAll(".openMod").forEach(lien => {
+            lien.addEventListener("click", (event) => {
+                event.preventDefault();
+                choixDetailListe(event, tabNom, tabPrenom, tabVille)
+                modaleLink.showModal();
+            });
+        })
+    }
+
+    modaleLink.addEventListener("click", (event) => {
+        if (event.target === modaleLink) {
+            modaleLink.close();
+        }
+    });
+}
+
+//Ouverture de la modale link
+const modaleBtn = document.getElementById("detailMod");
+function envoieModuleCarte(tabNom, tabPrenom, tabVille) {
+    if (modaleBtn) {
+        document.querySelectorAll(".btnDetail").forEach(lien => {
+            lien.addEventListener("click", (event) => {
+                event.preventDefault();
+                choixDetailCadre(event, tabNom, tabPrenom, tabVille)
+                modaleBtn.showModal();
+            });
+        })
+    }
+
+    modaleBtn.addEventListener("click", (event) => {
+        if (event.target === modaleBtn) {
+            modaleBtn.close();
+        }
+    });
+
+}
 
 
-
-
-
+window.onload = init
 
 
 
