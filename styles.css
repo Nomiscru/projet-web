@@ -8,7 +8,7 @@ padding: 0;
 /*------------------------*/
 /*-----*--TEMPLATE--*-----*/
 /*------------------------*/
-header {display: flex; justify-content: space-between; align-items: center;
+header {display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
     background-color: #2f6faa; padding: 1em} 
 #logo { display: block; height: max-content; width: max-content; margin-right: 1vw;}
 h1 {color: aliceblue;}
@@ -89,7 +89,7 @@ ul {list-style: none;}
     background-color: #466b8d; 
     color:aliceblue; font-size:medium; font-weight: bold; letter-spacing: 0.1em;
     border: 0.2em solid #134A7F; border-radius: 5%;  
-    margin-bottom: 5em; width: 18vw; height: auto; min-height: 3em;}
+    margin-bottom: 5em;min-width: 7em; width: 18vw; height: auto; min-height: 3em;}
 .btnHome:hover {box-shadow: 0.2em 0.2em  #134A7F;}
 .btnHome:active { background-color: #134A7F}    
 
@@ -116,7 +116,7 @@ margin-left: 19vw;}
     background-color: #468d5b; 
     color:aliceblue; font-size:medium; font-weight: bold; letter-spacing: 0.1em;
     border: 0.2em solid #134A7F; border-radius: 5%;  
-    margin-bottom: 5em; width: 18vw; height: auto; min-height: 3em;}
+    margin-bottom: 5em;min-width: 7em; width: 18vw; height: auto; min-height: 3em;}
 #btnSave:hover {box-shadow: 0.2em 0.2em  #134A7F;}
 #btnSave:active { background-color: #134A7F}     
 
@@ -143,3 +143,24 @@ body.sombre a {color: #86accf;}
 body.sombre #tab {border: 0.2em solid aliceblue;}
 body.sombre th {border-right: 0.2em aliceblue solid;}
 body.sombre td {border-right: 0.2em aliceblue solid;}
+
+/*------------------------*/
+/*---*--SCREEN SIZE---*---*/
+/*------------------------*/
+@media screen and (max-width: 393px) {
+    header {flex-direction: column;} 
+    h1 {margin-top: 1em;}
+    #menu {display: flex; flex-wrap: wrap; justify-content: center; margin-top: 1em;}
+    #affichageHome{justify-self: center;}
+
+    #affTab {margin: 6%;}
+     
+    
+
+    #themeForm {flex-wrap: nowrap; flex-direction: column;}
+    #themeForm>legend {align-self: center; width: auto; margin-bottom: 1em;}
+    #theme{align-self: center; margin-left: 0vw;}
+
+    #affichageForm {flex-wrap: nowrap; flex-direction: column; margin-top: 5em;}
+    #affichageForm>legend {align-self: center;text-align: center; width: auto; margin-bottom: 1em}
+}
