@@ -144,13 +144,15 @@ margin-left: 19vw;}
     display: flex;
 }
 #detailMod {flex-wrap: wrap; position: fixed; left: 50%; top: 50%; transform: translate(-50%, -50%);
-    min-width: 20em; width: 35vw; height: 20em;}
-#id { flex-wrap: wrap; width: 60%; margin-left: 1em; height: 5em;}
+    min-width: 20em; width: 35vw; height: 20em;
+    border: #134A7F solid 0.5em; border-radius: 2em;}
+#logo {margin-left: 2em; margin-top: 1em;}    
+#id { flex-wrap: wrap; width: 60%; margin-top: 2em; margin-left: 2em; height: 5em;}
 #id>div {display: flex; flex-direction:row ; justify-content: space-between;}   
 #id>div>p:first-child {min-width: 5em;}
 #id>div>p:last-child {min-width: 12em; width: 20vw;}
 
-#infoEtuCadre {border: 0.2em solid black;  width: auto; margin: 1em; width: 92%;}
+#infoEtuCadre {border: 0.2em solid #134A7F;  width: auto; margin: 1em; width: 92%;}
 #infoEtu {padding: 1em; width: 92%;}
 
 /*------------------------*/
